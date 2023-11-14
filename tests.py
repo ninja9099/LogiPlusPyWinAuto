@@ -1,15 +1,14 @@
 from pywinauto.application import Application
-
+import time
 # Start Notepad
 app = Application(backend='uia').start("C:\Program Files\LogiOptionsPlus\logioptionsplus.exe")
-app = app.connect(title=u'Logi Options+', timeout=10)
+# app = app.connect(title=u'Logi Options+', timeout=10)
 
+time.sleep(10)
+main_window = app.LogioOptionsPlus.child_window(title="ADD DEVICE", control_type="Button").wrapper_object()
+
+main_window.click_input()
+
+# print control identifier of the new window by keeping the that window open
+# so the control identifer are current state for the application
 app.LogiOptionsPlus.print_control_identifiers()
-main_window = app.LogioOptionsPlus.child_window(auto_id="389328", control_type="Document").wrapper_object()
-
-add_device_button = app.LogioOptionsPlus.child_window(title="ADD DEVICE", auto_id="icon-add", control_type="Button").wrapper_object()
-add_device_button.click_input()
-
-
-import pdb
-pdb.set_trace()
