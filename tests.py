@@ -5,7 +5,7 @@ app = Application(backend='uia').start("C:\Program Files\LogiOptionsPlus\logiopt
 # app = app.connect(title=u'Logi Options+', timeout=10)
 
 time.sleep(10)
-main_window = app.LogioOptionsPlus.child_window(title="ADD DEVICE", control_type="Button").wrapper_object()
+main_window = app.LogioOptionsPlus.child_window(title_re="ADD DEVICE", control_type="Button").wrapper_object()
 
 main_window.click_input()
 
