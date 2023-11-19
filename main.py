@@ -14,6 +14,7 @@ class BestRx:
             self.app = application.Application(backend='uia').start(self.app_path)
             time.sleep(5)
             self.main_dlg = self.app.LogioOptionsPlus
+            print("this are the list of windows we have for app ", self.app.windows())
         except FileNotFoundError:
             print("File not found.")
         except ElementNotFoundError:
