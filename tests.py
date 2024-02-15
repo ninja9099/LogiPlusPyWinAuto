@@ -10,7 +10,7 @@ main_window.draw_outline()
 
 # main_window.print_control_identifiers()
 
-# main_window.ok.click()
+
 # Steps
 # 1 click on validate button to open a validate dialouge
 main_window.Validate.click()
@@ -26,3 +26,5 @@ new_pan.wait('visible', 10)
 checkbox = new_pan.child_window(title=" Private validation", auto_id="1261", control_type="CheckBox")
 checkbox.click_input()
 new_pan.Close.click()
+
+main_window.ok.click()
