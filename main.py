@@ -38,9 +38,10 @@ class BestRx:
         if self.app:
             self.app.kill()
 
-app_path  = "C:\Program Files\LogiOptionsPlus\logioptionsplus.exe"
+app_path  = "C:\Program Files\CPUID\ROG CPU-Z\cpuz.exe"
 bestRx = BestRx(app_path)
 bestRx.start_app()
+import pdb
+pdb.set_trace()
 
-bestRx.click_button("ADD DEVICE")
-# bestRx.close_app()
+bestRx.close_app()

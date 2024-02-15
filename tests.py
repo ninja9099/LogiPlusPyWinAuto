@@ -1,17 +1,16 @@
-from pywinauto.application import Application
 import time
+from pywinauto.application import Application
+
 # Start Notepad
-app = Application(backend='uia').start("C:\Program Files\LogiOptionsPlus\logioptionsplus.exe")
-# app = app.connect(title=u'Logi Options+', timeout=10)
+app = Application(backend='uia').start("C:\Program Files\CPUID\ROG CPU-Z\cpuz.exe")
 
-time.sleep(10)
-main_window = app.LogioOptionsPlus.child_window(title_re="ADD DEVICE", control_type="Button").wrapper_object()
+main_window = app['CPU-Z Dialog']
+main_window.wait('visible', 10)
+main_window.draw_outline()
 
-main_window.click_input()
+main_window.print_control_identifiers()
 
-bluetooth_button = app.LogioOptionsPlus.child_window(title="receiver-icon Bluetooth ", auto_id="Bluetooth-connection-info-container", control_type="Button").wrapper_object()
-# print control identifier of the new window by keeping the that window open
-# so the control identifer are current state for the application
-bluetooth_button.click_input()
+import pdb
+pdb.set_trace()
 
-app.LogiOptionsPlus.print_control_identifiers()
+main_window.ok.click()
